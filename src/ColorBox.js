@@ -49,6 +49,6 @@ class ColorBox extends Component {
 export default ColorBox;
 
 
-{/* <Link to={`/palette/${paletteId}/${id}`} onClick={e => e.stopPropagation()}>
+/* <Link to={`/palette/${paletteId}/${id}`} onClick={e => e.stopPropagation()}>
 <span className="see-more">More</span>
-</Link> */}
+</Link> */
