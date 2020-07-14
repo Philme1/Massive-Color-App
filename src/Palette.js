@@ -32,7 +32,7 @@ class Palette extends Component {
         id={color.id} 
         paletteId={id}
         moreUrl={`/palette/${id}/${color.id}`}
-        showLink={true}
+        showingFullPalette={true}
        />
     ))
     return (
@@ -41,7 +41,7 @@ class Palette extends Component {
           level={level} 
           changeLevel={this.changeLevel} 
           handleChange={this.changeFormat}
-          showingFullPalette 
+          showingAllColors 
           />
         <div className="Palette-colors">
           {colorBoxes}
