@@ -202,7 +202,7 @@ class NewPaletteForm extends Component {
         <DraggableColorList 
           colors={colors} 
           removeColor={this.removeColor} 
-          axis="xy" 
+          axis="xy"                       //Determines the direction of the dragging i.e x&y direction 
           onSortEnd={this.onSortEnd}
         />
       </main>
