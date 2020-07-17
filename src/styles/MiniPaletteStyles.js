@@ -55,6 +55,8 @@ export default {
     right: "0px",
     top: "0px",
     padding: "10px",
+    border: "1px solid #eb3d30",
+    borderRadius: "5px",
     zIndex: 10,
     opacity: 0
   }
