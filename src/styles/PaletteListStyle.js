@@ -3,7 +3,7 @@
 export default {
   root: {
     backgroundColor: "blue",
-    height: "100vh",
+    height: "1600px", //"100vh"
     display: "flex",
     alignItems: "flex-start",
     justifyContent: "center"
