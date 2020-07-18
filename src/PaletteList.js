@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import MiniPalette from "./MiniPalette";
 import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Avatar from "@material-ui/core/Avatar";
 import { ListItem, ListItemAvatar, List, ListItemText } from '@material-ui/core';
@@ -46,7 +43,7 @@ class PaletteList extends Component {
     this.props.history.push(`/palette/${id}`)
   }
   render() {
-    const { palettes, classes, deletePalette } = this.props;
+    const { palettes, classes } = this.props;
     const { openDeleteDialog } = this.state;
     return (
       <div className={classes.root}>

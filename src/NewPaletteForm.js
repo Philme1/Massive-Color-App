@@ -11,6 +11,7 @@ import DraggableColorList from "./DraggableColorList";
 import {arrayMove} from 'react-sortable-hoc';
 import PaletteFormNav from "./PaletteFormNav";
 import ColorPickerForm from "./ColorPickerForm";
+import seedColors from "./seedColors"
 
 
 
@@ -23,7 +24,8 @@ class NewPaletteForm extends Component {
   };
   constructor(props) {
     super(props);
-    this.state = { open: false,  colors: this.props.palettes[0].colors, newPaletteName: "" }
+    // this.state = { open: false,  colors: this.props.palettes[0].colors, newPaletteName: "" }
+    this.state = { open: false,  colors: seedColors[0].colors, newPaletteName: "" }
     
     this.addNewColor = this.addNewColor.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -56,11 +58,24 @@ class NewPaletteForm extends Component {
     this.props.history.push("/")
   }
 
-  addRandomColors() {
+  // addRandomColors() {
+  //   const allColors = this.props.palettes.map(p => p.colors).flat();
+  //   let rand = Math.floor(Math.random() * allColors.length);
+  //   const randomColor = allColors[rand];
+  //   this.setState({ colors: [...this.state.colors, randomColor]})
+  // }
+
+  addRandomColor() {
     const allColors = this.props.palettes.map(p => p.colors).flat();
-    let rand = Math.floor(Math.random() * allColors.length);
-    const randomColor = allColors[rand];
-    this.setState({ colors: [...this.state.colors, randomColor]})
+    let rand;
+    let randomColor;
+    let isDuplicateColor = true;
+    while (isDuplicateColor) {
+      rand = Math.floor(Math.random() * allColors.length);
+      randomColor = allColors[rand];
+      isDuplicateColor = this.state.colors.some(color => color.name === randomColor.name);
+    }
+    this.setState({ colors: [...this.state.colors, randomColor] });
   }
 
   removeColor(colorName) {

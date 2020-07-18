@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import { withStyles } from "@material-ui/styles";
 import { Link } from 'react-router-dom';
+import classNames from "classnames";
 
 import styles from "./styles/ColorBoxStyles";
 
@@ -25,8 +26,12 @@ class ColorBox extends Component {
     return (
       <CopyToClipboard text={ background } onCopy={this.changeCopyState} >
         <div style={{background: background}} className={classes.ColorBox}>
-        <div style={{background: background}} className={`${classes.copyOverlay} ${copied && classes.showOverlay}`} />
-        <div className={`${classes.copyMessage} ${copied && classes.showMessage}`} >
+        {/* <div style={{background: background}} className={`${classes.copyOverlay} ${copied && classes.showOverlay}`} /> They are the same, just using the library class called classNames */}
+        <div style={{background: background}} className={classNames(classes.copyOverlay, {[classes.showOverlay]: copied})}
+        />
+        {/* <div className={`${classes.copyMessage} ${copied && classes.showMessage}`} > */}
+        {/* The code reads; if copied is true, add showMessage class. You can add more logics a code below */}
+        <div className={classNames(classes.copyMessage, {[classes.showMessage]: copied})} >
           <h1>Copied!</h1>
           <p className={classes.copyText}>{background}</p>
         </div>
