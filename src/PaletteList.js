@@ -68,6 +68,9 @@ class PaletteList extends Component {
             ))}
           </TransitionGroup>
         </div>
+
+        {/* The Dialog box starts here */}
+        
         <Dialog open={openDeleteDialog} aria-labelledby='delete-dialog-title' onClose={this.closeDialog}>
           <DialogTitle id='delete-dialog-title'>Delete This Palette?</DialogTitle>
           <List>

@@ -13,6 +13,7 @@ import PaletteFormNav from "./PaletteFormNav";
 import ColorPickerForm from "./ColorPickerForm";
 
 
+
 import styles from "./styles/NewPaletteFormStyles";
 
 
@@ -145,6 +146,7 @@ class NewPaletteForm extends Component {
           removeColor={this.removeColor} 
           axis="xy"                       //Determines the direction of the dragging i.e x&y direction 
           onSortEnd={this.onSortEnd}
+          distance={20}                 //You must specify this distance of dragging
         />
       </main>
     </div>
